@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEO TTS | Modern Text-to-Speech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <a href="#" class="logo">
+                <i class="fas fa-wave-square logo-icon"></i>
+                <span>NEO TTS</span>
+            </a>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <main class="main-content">
+            <section class="text-panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">Your Text</h2>
+                    <div class="text-actions">
+                        <button class="btn btn-secondary" id="clearText">
+                            <i class="fas fa-eraser"></i> Clear
+                        </button>
+                    </div>
+                </div>
+                <textarea class="text-area" id="textInput" placeholder="Type or paste your text here..."></textarea>
+                <div class="text-footer">
+                    <span id="charCount">0 characters</span>
+                    <span id="wordCount">0 words</span>
+                </div>
+            </section>
+
+            <section class="controls-panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">Voice Controls</h2>
+                    <span id="voiceStatus"></span>
+                </div>
+
+                <div class="control-group">
+                    <label for="voiceSelect" class="control-label">Voice</label>
+                    <div class="select-wrapper">
+                        <select id="voiceSelect">
+                            <option value="">Loading voices...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label for="languageSelect" class="control-label">Language</label>
+                    <div class="select-wrapper">
+                        <select id="languageSelect">
+                            <option value="">Loading languages...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Speech Rate</label>
+                    <div class="slider-container">
+                        <input type="range" min="0.5" max="2" step="0.1" value="1" class="slider" id="rateSlider">
+                        <span class="slider-value" id="rateValue">1.0</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Pitch</label>
+                    <div class="slider-container">
+                        <input type="range" min="0.5" max="1.5" step="0.1" value="1" class="slider" id="pitchSlider">
+                        <span class="slider-value" id="pitchValue">1.0</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Volume</label>
+                    <div class="slider-container">
+                        <input type="range" min="0" max="1" step="0.1" value="1" class="slider" id="volumeSlider">
+                        <span class="slider-value" id="volumeValue">1.0</span>
+                    </div>
+                </div>
+
+                <div class="buttons-grid">
+                    <button class="btn btn-primary" id="speakButton">
+                        <i class="fas fa-play"></i> Speak
+                    </button>
+                    <button class="btn btn-secondary" id="pauseButton" disabled>
+                        <i class="fas fa-pause"></i> Pause
+                    </button>
+                    <button class="btn btn-accent" id="resumeButton" disabled>
+                        <i class="fas fa-redo"></i> Resume
+                    </button>
+                    <button class="btn btn-danger" id="stopButton" disabled>
+                        <i class="fas fa-stop"></i> Stop
+                    </button>
+                </div>
+
+                <div class="status-card">
+                    <div class="status-row">
+                        <span class="status-label">Current Voice:</span>
+                        <span class="status-value" id="currentVoice">None selected</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">Status:</span>
+                        <span class="status-value" id="status">Ready</span>
+                    </div>
+                    <div class="status-row">
+                        <span class="status-label">Duration:</span>
+                        <span class="status-value" id="durationEstimate">-</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>NEO TTS &copy; 2023 | Modern Text-to-Speech Synthesis</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
